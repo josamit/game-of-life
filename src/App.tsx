@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Grid from './Grid'
-import { Nav, Navbar } from 'react-bootstrap'
 
 const App: React.FC = () => {
   const [generation, setGenerations] = useState(1)
-  const [rows, setRows] = useState(20)
-  const [cols, setCols] = useState(20)
+  const [rows, setRows] = useState(30)
+  const [cols, setCols] = useState(30)
   const [grid, setGrid] = useState(Array.from({ length: rows }, () =>
     Array.from({ length: cols }, () => false)
   ))
@@ -56,15 +55,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Navbar bg="dark" expand="lg">
-        <Navbar.Brand href="#home">React game of life</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <h1>Game of Life</h1>
       <Grid grid={grid} rows={rows} cols={cols} selectBox={(row: number, col: number) => {
         const mutableGrid = [...grid]
         mutableGrid[row][col] = true

@@ -19,9 +19,10 @@ const Grid: React.FC<GridProps> = ({grid, rows, cols, selectBox}) => {
       boxClass = grid[i][j] ? 'box on' : 'box off'
       rowsArr.push(<Box boxClass={boxClass} key={boxId} row={i} col={j} selectBox={selectBox}/>)
     }
+    rowsArr.push(<div/>)
   }
     return (
-        <div className="grid">
+        <div>
           {rowsArr}
         </div>
     )
